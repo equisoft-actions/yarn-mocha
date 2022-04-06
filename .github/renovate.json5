@@ -1,8 +1,0 @@
-{
-  extends: [
-    "github>kronostechnologies/standards:renovate-base"
-  ],
-
-  reviewers: ["harmony"],
-  rebaseWhen: "conflicted",
-}
