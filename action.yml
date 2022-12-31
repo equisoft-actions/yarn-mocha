@@ -40,7 +40,7 @@ runs:
       shell: bash
       id: context
       run: |
-        echo "::set-output name=working-directory::$(realpath ${{ inputs.working-directory }})"
+        echo "working-directory=$(realpath ${{ inputs.working-directory }})" >> $GITHUB_OUTPUT
     - name: Run Jest
       shell: bash
       working-directory: ${{ steps.context.outputs.working-directory }}
