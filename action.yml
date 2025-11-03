@@ -65,7 +65,7 @@ runs:
         path: ${{ steps.context.outputs.working-directory }}/build/mocha/coverage/clover.xml
 
     - name: Create annotations
-      uses: mikepenz/action-junit-report@v5
+      uses: mikepenz/action-junit-report@v6
       if: "!cancelled() && inputs.enable-annotations == 'true' && github.actor != 'dependabot[bot]'"
       with:
         check_name: Mocha Report Analysis
