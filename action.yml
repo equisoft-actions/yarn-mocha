@@ -47,7 +47,7 @@ runs:
       run: yarn ${{ inputs.task-name }}
 
     - name: Upload report
-      uses: actions/upload-artifact@v7
+      uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
       if: "!cancelled()"
       with:
         name: ${{ inputs.report-name }}
@@ -56,7 +56,7 @@ runs:
         path: ${{ steps.context.outputs.working-directory }}/build/mocha/junit.xml
 
     - name: Upload coverage report
-      uses: actions/upload-artifact@v7
+      uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
       if: "!cancelled()"
       with:
         name: ${{ inputs.coverage-report-name }}
@@ -65,7 +65,7 @@ runs:
         path: ${{ steps.context.outputs.working-directory }}/build/mocha/coverage/clover.xml
 
     - name: Create annotations
-      uses: mikepenz/action-junit-report@v6
+      uses: mikepenz/action-junit-report@bccf2e31636835cf0874589931c4116687171386 # v6
       if: "!cancelled() && inputs.enable-annotations == 'true' && github.actor != 'dependabot[bot]'"
       with:
         check_name: Mocha Report Analysis
